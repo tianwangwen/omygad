@@ -16,8 +16,8 @@ export default (
     <Route path='test' component={Test} />
     <Route path='test2' component={Test} />
     <Route path='test1' component={Test1} />
+    <Route path='hello' component={Sitting} />
     <Route path='todo-list' component={TodoList} />
     <Route path='user' component={User} />
-    <Route path='sitting' component={Sitting} />
   </Route>
 );

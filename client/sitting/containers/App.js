@@ -3,7 +3,9 @@ import React from 'react';
 import styles from './index.module.scss';
 
 const Sitting = () => (
-  <div className={styles.wrap} />
+  <div>
+    <div className={styles.wrap} />
+  </div>
 );
 
 export default Sitting;
