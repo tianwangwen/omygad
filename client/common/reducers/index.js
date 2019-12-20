@@ -4,9 +4,11 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import test from '../../todo_list/reducers';// TODO this should be deleted, since it is for test
+import user from '../../user/reducers';// TODO this should be deleted, since it is for test
 
 const rootReducer = combineReducers({
   routing: routerReducer,
+  user,
   test   // TODO this should be deleted, since it is for test
 });
 

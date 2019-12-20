@@ -18,5 +18,12 @@ export default {
     host: SERV_HOST,
     port: SERV_PORT,
     domain: `http://${SERV_HOST}:${SERV_PORT}`
+  },
+
+  Mysql: {
+    host: '106.54.91.74',
+    user: 'root',
+    password: 'yucd7381',
+    database: 'omygad'
   }
 };

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUser } from '../actions/index';
@@ -7,24 +8,32 @@ class TodosTable extends Component {
     super();
     this.getUser = this.getUser.bind(this);
   }
-  componentDidMount() {
-    // this.props.getUser();
-  }
+  componentDidMount() {}
+
   getUser() {
-    console.log(this.props);
     this.props.getUser();
   }
   render() {
+    const { userList } = this.props;
     return (
       <div>
         <button onClick={this.getUser}>获取用户</button>
+        {
+          userList.map(item => (
+            <div key={item.id}>
+              <span>{item.id}</span>
+              <span>{item.name}</span>
+              <span>{item.email}</span>
+            </div>
+          ))
+        }
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  todos: state.test.text
+  userList: state.user.userList
 });
 
 const mapDispatchToProps = {
