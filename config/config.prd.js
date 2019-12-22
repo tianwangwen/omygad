@@ -23,7 +23,7 @@ export default {
   Mysql: {
     host: '106.54.91.74',
     user: 'root',
-    password: 'yucd7381',
+    password: '@@YUcd7381',
     database: 'omygad'
   }
 };
