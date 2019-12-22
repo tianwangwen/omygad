@@ -8,6 +8,7 @@ import { getData } from '../service';
 function* onGetUser() {
   try {
     const result = yield call(getData);
+    console.log(result);
     yield put(updateUser(result));
   } catch (e) {
     console.log(e);
