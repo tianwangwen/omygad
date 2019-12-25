@@ -20,11 +20,11 @@ export default {
   },
 
   Mysql: {
-    host: '106.54.91.74',
-    // host: 'localhost',
+    // host: '106.54.91.74',
+    host: 'localhost',
     user: 'root',
-    password: 'yucd7381',
-    // password: '12345678',
+    // password: 'yucd7381',
+    password: '12345678',
     database: 'omygad'
   }
 }
