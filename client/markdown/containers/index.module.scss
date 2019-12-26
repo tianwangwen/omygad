@@ -3,19 +3,22 @@
 .warp {
   background: #f7f8f9;
   min-height: 100vh;
+  width: 100%;
 }
 
 .container {
   width: 90%;
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 70px 90px;
   box-shadow: 0 1px 10px 2px rgba(0,0,0,.06);
   background: white;
+  box-sizing: border-box;
 }
 
 @media screen and(max-width: 750px) {
   .container {
-    padding: 5% 40px;
+    width: 100%;
+    padding: 20px 5% 60px;
   }
 }
