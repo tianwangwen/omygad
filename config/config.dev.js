@@ -23,13 +23,8 @@ export default {
     // host: '106.54.91.74',
     host: 'localhost',
     user: 'root',
-<<<<<<< HEAD
     password: '@@YUcd7381',
     // password: '12345678',
-=======
-    // password: 'yucd7381',
-    password: '12345678',
->>>>>>> bd927f55e7e55a430735586cb0e51d3d1f1df7e5
     database: 'omygad'
   }
 }

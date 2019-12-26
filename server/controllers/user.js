@@ -2,7 +2,6 @@
 import { getService, postService, putService, getMarkDmService } from '../services/user';
 
 async function getUser(ctx) {
-  console.log('ctx ---->', ctx);
   const body = await getService();
   ctx.body = body;
 }

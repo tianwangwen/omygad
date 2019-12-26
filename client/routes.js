@@ -8,6 +8,7 @@ import Test from './test_to_be_deleted'; // TODO this should be deleted, since i
 import Test1 from './test_to_be_deleted/Test1'; // TODO this should be deleted, since it's for test
 import TodoList from './todo_list/containers/App'; // TODO this should be deleted, since it's for test
 import User from './user/containers/App'; // TODO this should be deleted, since it's for test
+import Markdown from './markdown/containers/App'; // TODO this should be deleted, since it's for test
 import Sitting from './sitting/containers/App';
 
 export default (
@@ -19,5 +20,6 @@ export default (
     <Route path='hello' component={Sitting} />
     <Route path='todo-list' component={TodoList} />
     <Route path='user' component={User} />
+    <Route path='markdown/:filename' component={Markdown} />
   </Route>
 );

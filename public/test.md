@@ -1,4 +1,3 @@
-![avatar](https://open-cdn.zhongan.com/dm-instrument/images/zbfkl840uctx8mek5e83baveoiccjouqbtom6let.%E9%A3%9E%E4%BA%ABe%E7%94%9F%402x.png)
 搭建个人网站知识储备：
 
 - 服务器
