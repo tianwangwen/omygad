@@ -19,7 +19,7 @@ export const toggleUser = user => ({
   payload: user
 });
 
-export const getUser = () => ({ type: GET_USER });
+export const getUser = (data) => ({ type: GET_USER, payload: data });
 
 export const updateUser = data => ({
   type: UPDATE_USER,

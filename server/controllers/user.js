@@ -1,5 +1,5 @@
 // User need to be deleted, since for test
-import { getService, postService, putService, deleteService } from '../services/user';
+import { getService, postService, putService, getMarkDmService } from '../services/user';
 
 async function getUser(ctx) {
   console.log('ctx ---->', ctx);
@@ -19,8 +19,8 @@ async function putUser(ctx) {
   ctx.body = body;
 }
 
-async function deleteUser(ctx) {
-  const body = await deleteService(ctx.request.body.id);
+async function getMarkDm(ctx) {
+  const body = await getMarkDmService();
   ctx.body = body;
 }
 
@@ -28,5 +28,5 @@ export default {
   getUser,
   postUser,
   putUser,
-  deleteUser
+  getMarkDm
 };
