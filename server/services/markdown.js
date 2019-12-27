@@ -1,7 +1,7 @@
 const fs = require('fs');
 const marked = require('marked');
 
-const path = './public/';
+const path = './public/markdown/';
 
 function getMarkDmService(filename) {
   return new Promise((resolve, reject) => {
