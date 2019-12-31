@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const fs = require('fs');
@@ -48,6 +48,10 @@ const clientConfig = {
         plugins: ['transform-runtime', 'add-module-exports']
       }
     }, {
+      test: /\.css$/,
+      // ExtractTextPlugin will extract css code from bundle into a sepreate file
+      loader: ExtractTextPlugin.extract('style', 'css?modules&camelCase&importLoaders=1&localIdentName=[hash:base64:8]!postcss!sass')
+    }, {
       test: /\.scss$/,
       // ExtractTextPlugin will extract css code from bundle into a sepreate file
       loader: ExtractTextPlugin.extract('style', 'css?modules&camelCase&importLoaders=1&localIdentName=[hash:base64:8]!postcss!sass')
@@ -60,7 +64,7 @@ const clientConfig = {
     }]
   },
   // autoprefixer will add browsers' prefix before css class automatically
-  postcss: [autoprefixer({ browsers: ['> 5%'] })],
+  postcss: [],
   resolve: { extensions: ['', '.js', '.json', '.scss'] },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),

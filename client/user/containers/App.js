@@ -8,8 +8,8 @@ class TodosTable extends Component {
     super();
     this.getUser = this.getUser.bind(this);
     this.state = {
-      text: '',
-    }
+      text: ''
+    };
   }
   componentDidMount() {}
 
@@ -18,8 +18,8 @@ class TodosTable extends Component {
       console.log(res);
       this.setState({
         text: res.text
-      })
-    }
+      });
+    };
     this.props.getUser(callback);
   }
   render() {
@@ -28,7 +28,7 @@ class TodosTable extends Component {
     return (
       <div>
         <button onClick={this.getUser}>获取用户</button>
-        <div dangerouslySetInnerHTML={{__html: text}} />
+        <div dangerouslySetInnerHTML={{ __html: text }} />
         {
           userList.map(item => (
             <div key={item.id}>

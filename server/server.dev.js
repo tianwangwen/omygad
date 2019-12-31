@@ -92,11 +92,17 @@ app.use(router.allowedMethods());
 console.log(`\n==>   Listening on port ${port}. Open up http://localhost:${port}/ in your browser.\n`);
 
 // hot module reload middlewares
-app.use(convert(devMiddleware(compiler, {
+// app.use(convert(devMiddleware(compiler, {
+//     // noInfo: true,
+//     publicPath: webpackCfg.output.publicPath
+// })));
+// app.use(convert(hotMiddleware(compiler)));
+
+app.use(devMiddleware(compiler, {
     // noInfo: true,
     publicPath: webpackCfg.output.publicPath
-})));
-app.use(convert(hotMiddleware(compiler)));
+}));
+app.use(hotMiddleware(compiler));
 
 // start server
 app.listen(port);
