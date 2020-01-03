@@ -39,13 +39,13 @@ const clientConfig = {
     publicPath: '/'   // TODO repleace it with your cdn address, like: 'http://cdn.com/'
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['es2015', 'react', 'stage-0'],
-        plugins: ['transform-runtime', 'add-module-exports']
+        presets: ['es2015', 'react', 'stage-0']
+        // plugins: ['transform-runtime', 'add-module-exports']
       }
     }, {
       test: /\.css$/,
@@ -69,10 +69,10 @@ const clientConfig = {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
-      filename: '[name].[chunkhash:8].js'
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   names: ['vendor', 'manifest'],
+    //   filename: '[name].[chunkhash:8].js'
+    // }),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       comments: false
@@ -84,7 +84,17 @@ const clientConfig = {
       chunksSortMode: 'none'
     }),
     new ExtractTextPlugin('[name].[contenthash:8].css', { allChunks: true })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          name: 'commons',
+          minChunks: 2
+        }
+      }
+    }
+  }
 };
 
 // for node code part

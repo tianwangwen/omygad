@@ -15,7 +15,6 @@ class TodosTable extends Component {
 
   getUser() {
     const callback = (res) => {
-      console.log(res);
       this.setState({
         text: res.text
       });

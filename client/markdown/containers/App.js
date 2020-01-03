@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMarkdown } from '../actions/index';
-import styles from './index.module.scss';
+import styles from './index.scss';
 
 class TodosTable extends Component {
   constructor() {

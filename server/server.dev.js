@@ -6,8 +6,11 @@ require('babel-polyfill');
 
 // for hot module reload, below 3 hooks are necessary when server start
 // babel hook
-require('babel-register')({
-    presets: ['es2015', 'react', 'stage-0'],
+require('@babel/register')({
+    presets: [
+        '@babel/preset-env',
+        '@babel/preset-react'
+    ],
     plugins: ['add-module-exports']
 });
 
@@ -35,7 +38,7 @@ const port = config.Local.port;
 const clientRoute = require('./middlewares/clientRoute');
 const devMiddleware = require('koa-webpack-dev-middleware');
 const hotMiddleware = require('koa-webpack-hot-middleware');
-const convert = require('koa-convert');
+// const convert = require('koa-convert');
 const webpackCfg = require('../build/webpack.dev.config');
 const webpack = require('webpack');
 const compiler = webpack(webpackCfg);
@@ -43,27 +46,6 @@ const router = require('./routes');
 const views = require('koa-views');
 const path = require('path');
 const fs = require('fs');
-// const mysql = require('mysql');
-
-// const connection = mysql.createConnection({
-//     host     : 'localhost',
-//     user     : 'root',
-//     password : '12345678',
-//     database : 'omygad',
-//   });
-   
-// connection.connect();
-
-// connection.query('SELECT * FROM user',function (err, result) {
-//     if(err){
-//       console.log('[SELECT ERROR] - ',err.message);
-//       return;
-//     }
-
-//    console.log('--------------------------SELECT----------------------------');
-//    console.log(result);
-//    console.log('------------------------------------------------------------\n\n');  
-// });
 
 // for hot module reload, we need to generate the html
 // according to html template at first of server starting

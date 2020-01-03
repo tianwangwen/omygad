@@ -1,7 +1,7 @@
 /* eslint-disable */
 // add Devtool into the app layout for dev env.
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 import DevTools from './DevTools.dev';
 import Layout from './Layout';
@@ -31,9 +31,5 @@ class Root extends Component {
     );
   }
 }
-
-Root.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default Root;

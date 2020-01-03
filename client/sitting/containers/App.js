@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import styles from './index.module.scss';
+import styles from './index.scss';
 
 const Sitting = () => (
   <div>
