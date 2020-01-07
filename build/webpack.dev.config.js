@@ -43,24 +43,33 @@ module.exports = {
             presets: [
               '@babel/preset-env',
               '@babel/preset-react'
-            ]
+            ],
             // presets: ['react', 'es2015'],
-            // plugins: ['@babel/plugin-transform-runtime', 'babel-plugin-react-transform']
+            plugins: ['@babel/plugin-transform-runtime']
           }
         }
       }, {
-        test: /\.scss$/,
+
+        test: /\.(sc|c|sa)ss$/,
+
         use: [
-          {
-            loader: 'style-loader' // 将 JS 字符串生成为 style 节点
-          },
-          {
-            loader: 'css-loader' // 将 CSS 转化成 CommonJS 模块
-          },
-          {
-            loader: 'sass-loader' // 将 Sass 编译成 CSS
+
+          'style-loader', {
+
+            loader: 'css-loader',
+
+            options: { modules: true, sourceMap: true }
+
+          }, {
+
+            loader: 'sass-loader',
+
+            options: { sourceMap: true }
+
           }
+
         ]
+
       }, {
         test: /\.(html)$/,
         use: {
@@ -75,31 +84,34 @@ module.exports = {
 
         // include: [path.resolve(__dirname, 'src/')],
 
-        use: [{
+        use: [
+          'file-loader',
+          {
 
-          loader: 'url-loader',  // 根据图片大小，把图片转换成 base64
+            loader: 'url-loader',  // 根据图片大小，把图片转换成 base64
 
-          options: { limit: 10000 }
+            options: { limit: 10000 }
 
-        }, {
+          }, {
 
-          loader: 'image-webpack-loader',
+            loader: 'image-webpack-loader',
 
-          options: {
+            options: {
+              disable: true
 
-            // mozjpeg: { progressive: true, quality: 65 },
+              // mozjpeg: { progressive: true, quality: 65 },
 
-            // optipng: { enabled: false },
+              // optipng: { enabled: false },
 
-            // pngquant: { quality: '65-90', speed: 4 },
+              // pngquant: { quality: '65-90', speed: 4 },
 
-            // gifsicle: { interlaced: false },
+              // gifsicle: { interlaced: false },
 
-            // webp: { quality: 75 }
+              // webp: { quality: 75 }
 
-          }
+            }
 
-        }]
+          }]
 
       }
     ]

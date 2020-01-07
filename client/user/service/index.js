@@ -1,6 +1,6 @@
-import { get } from '../../shared/utils';
+import ajax from '../../shared/utils';
 
-const getData = () => get('/api/user/getUser');
+export const getData = () => ajax.get('/api/user/getUser');
 
 export default {
   getData

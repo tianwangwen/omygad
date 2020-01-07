@@ -1,6 +1,6 @@
-import { get } from '../../shared/utils';
+import ajax from '../../shared/utils';
 
-const getMarkdownApi = filename => get(`/api/markdown/getMarkdown?filename=${filename}`);
+export const getMarkdownApi = filename => ajax.get(`/api/markdown/getMarkdown?filename=${filename}`);
 
 export default {
   getMarkdownApi

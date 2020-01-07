@@ -1,9 +1,9 @@
-import { get, post, put, del } from '../../shared/utils';
+import test from '../../shared/utils';
 
-const getData = () => get('/api/test/getTodo');
-const postData = data => post('/api/test/postTodo', data);
-const putData = data => post('/api/test/putTodo', data);
-const deleteData = data => post('/api/test/deleteTodo', data);
+export const getData = () => test.get('/api/test/getTodo');
+export const postData = data => test.post('/api/test/postTodo', data);
+export const putData = data => test.post('/api/test/putTodo', data);
+export const deleteData = data => test.post('/api/test/deleteTodo', data);
 
 export default {
   getData,

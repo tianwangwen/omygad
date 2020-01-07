@@ -1,7 +1,7 @@
 // Plan to add the common service with other side.
-import { BrowserRouter } from 'react-router-dom';
+import { browserHistory } from 'react-router';
 
-export const history = BrowserRouter;
+export const history = browserHistory;
 
 export default {
   history

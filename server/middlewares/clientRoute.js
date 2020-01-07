@@ -1,8 +1,8 @@
 // web route for server side, since the react will be rendered by server side
 
 import React from 'react';
-import { renderToNodeStream } from 'react-dom/server';
-import { match, StaticRouter } from 'react-router-dom';
+import { renderToString } from 'react-dom/server';
+import { match, RouterContext } from 'react-router';
 import { Provider } from 'react-redux';
 
 import routes from '../../client/routes';
@@ -17,11 +17,10 @@ async function clientRoute(ctx, next) {
     _renderProps = renderProps;
   });
   if (_renderProps) {
-    console.log('_renderProps--------->', _renderProps);
     await ctx.render('index', {
-      root: renderToNodeStream(
+      root: renderToString(
         <Provider store={store}>
-          <StaticRouter {..._renderProps} />
+          <RouterContext {..._renderProps} />
         </Provider>
       ),
       state: store.getState()
