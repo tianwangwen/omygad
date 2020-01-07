@@ -16,4 +16,5 @@ app.use(clientRoute);
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(serve(path.resolve(__dirname, '../dist/client')));
+app.use(serve(path.resolve(__dirname, '../public')));
 app.listen(port);
