@@ -17,9 +17,7 @@ const store = storeCreator(window.REDUX_STATE);
 
 // use react-router-redux wrap react-router
 const reduxHistory = syncHistoryWithStore(history, store);
-console.log('match ===>', match);
 match({ history: reduxHistory, routes }, (error, redirectLocation, renderProps) => {
-  console.log('renderProps ---->', renderProps);
   render(
     <Provider store={store}>
       <Router {...renderProps} />
