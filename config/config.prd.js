@@ -21,9 +21,9 @@ export default {
   },
 
   Mysql: {
-    host: '106.54.91.74',
-    user: 'root',
-    password: '@@YUcd7381',
+    host: 'localhost',
+    user: 'omygad',
+    password: '12345678',
     database: 'omygad'
   }
 };
